@@ -9,7 +9,7 @@ print(repr(data['train']))
 print(repr(data['test']))
 
 #create model
-model = LightFM(loss='wrap')
+model = LightFM(loss='warp')
 
 #train model
 model.fit(data['train'],epochs=30,num_threads=2)
@@ -30,14 +30,14 @@ def sample_recommendation(model,data,user_ids):
         top_items = data['item_labels'][np.argsort(-score)]
 
         #print out the results
-        print("User %s", % user_id)
-        print("     Known positives:")
+        print("User %s \n\n Known Positives:",  user_id)
 
         for x in known_positives[:3]:
-            print("              %s", % x)
+            print("        %s",  x)
+            
         print("         Recommended:")
 
         for x in top_items[:3]:
-            print("           %s", % x)
+            print("           %s", x)
 
 sample_recommendation(model,data,[3,25,450])
