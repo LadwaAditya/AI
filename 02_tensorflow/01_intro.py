@@ -1,5 +1,5 @@
 import input_data
-mnist = input_data.read_data_sets("/tmp/data/", one_hot=True)
+mnist = input_data.read_data_sets("/tmp/data/", one_hot= True)
 
 import tensorflow as tf
 
@@ -36,7 +36,7 @@ merged_summary_op = tf.summary.merge_all()
 with tf.Session() as sess:
     sess.run(init)
 
-    summary_writer = tf.summary.FileWriter('home/epl/code/AI/logs', graph = sess.graph)
+    summary_writer = tf.summary.FileWriter('logs', graph = sess.graph)
 
     for iteration in range(training_iteration):
         avg_cost = 0.
