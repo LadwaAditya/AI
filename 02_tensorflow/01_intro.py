@@ -52,7 +52,7 @@ with tf.Session() as sess:
             summary_writer.add_summary(summary_str, global_step= total_batch + i)
         
         if iteration % display_step == 0:
-            print("Iteration %04d Cost = {:.9f}",iteration+1, format(avg_cost))
+            print("Iteration", iteration + 1," Cost = ", format(avg_cost))
     
     print("Training complete")
 
